@@ -1,22 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Header({ position }) {
-  const navList = [
-    "router",
-    "multipage",
-    "multipage_state",
-    "layout",
-    "head_script",
-  ];
+import { navList } from "../../data/nav";
+
+export default function Header() {
   return (
-    <header
-      className={position === "top" ? "header" : "headerBottom"}
-    >
+    <header className="header">
       <Link href="/">
-        <div>
-          <Image src="/vercel.svg" alt="vercel" width={177} height={40} />
-        </div>
+          <Image loader={({src}) => src} src="/vercel.svg" alt="vercel" width={177} height={40} />
       </Link>
       <nav>
         <ul className="nav">
