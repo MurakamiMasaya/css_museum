@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 
 // Next.jsはNode.jsで１回、ブラウザで１回関数コンポーネントが実行されている
-export default function SSR({ message }) {
+// export default function SSR({ message }) {
+export default function SSR() {
   console.log('hello')
-  console.log(message)
+  // console.log(message)
 
   // useEffect内は確実にブラウザ上で実行される
   // 結局、副作用に関してはuseEffect内部に含めればいい
@@ -23,10 +24,11 @@ export default function SSR({ message }) {
 // 設定したpropsが関数コンポーネントの引数になる
 // props内部がjsonになって返ってくる
 // getServerSidePropsはpage/以下、pageコンポーネントのみで実行できる
-export async function getServerSideProps(context){
-  const { cookie } = context.req.headers
-  console.log(cookie, 'cookie')
-  return {
-    props: { message: 'From Server Side Props' }
-  }
-}
+// getServerSidePropsがあると、npm run export(HTML生成)ができない
+// export async function getServerSideProps(context){
+//   const { cookie } = context.req.headers
+//   console.log(cookie, 'cookie')
+//   return {
+//     props: { message: 'From Server Side Props' }
+//   }
+// }
