@@ -3,20 +3,20 @@ import Link from "next/link";
 
 export default function Header({ position }) {
   const navList = [
-    "07_router",
-    "08_multipage",
-    "09_multipage_state",
-    "10_layout",
-    "11_head_script",
+    "router",
+    "multipage",
+    "multipage_state",
+    "layout",
+    "head_script",
   ];
   return (
     <header
       className={position === "top" ? "header" : "headerBottom"}
     >
       <Link href="/">
-        <a>
+        <div>
           <Image src="/vercel.svg" alt="vercel" width={177} height={40} />
-        </a>
+        </div>
       </Link>
       <nav>
         <ul className="nav">
@@ -24,7 +24,7 @@ export default function Header({ position }) {
             return (
               <li key={item}>
                 <Link href={`/${item}`}>
-                  <a className="link">{item}</a>
+                  <div className="link">{item}</div>
                 </Link>
               </li>
             );
