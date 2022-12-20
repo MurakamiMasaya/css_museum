@@ -4,7 +4,10 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     loader: "custom"
-  }
+  },
+  compiler: {
+    styledComponents: true,
+  },
 }
 
 module.exports = nextConfig
